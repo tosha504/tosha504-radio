@@ -1,0 +1,6 @@
+node_modules
+scss
+webpack.mix.js
+package.json
+package-lock.json
+mix-manifest.json
