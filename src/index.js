@@ -2,7 +2,19 @@ jQuery(document).ready(function ($) {
   const $nav = $(".header__navigation"),
     $burger = $(".header__burger"),
     $body = $("body"),
+    $header = $(".header"),
+    $logo = $(".header__logo img"),
     $slider = $(".programs__slider");
+
+  if (!$body.hasClass("home")) {
+    $header
+      .css({
+        background: "linear-gradient(96.8deg, #E18C44 18.05%, #FFCC81 91.37%)",
+        padding: "20px",
+      })
+      .removeClass("header__logo")
+      .addClass(".header__logo_m");
+  }
 
   $burger.on("click", function (event) {
     $burger.toggleClass("active");
