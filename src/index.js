@@ -3,17 +3,16 @@ jQuery(document).ready(function ($) {
     $burger = $(".header__burger"),
     $body = $("body"),
     $header = $(".header"),
-    $logo = $(".header__logo img"),
     $slider = $(".programs__slider");
 
   if (!$body.hasClass("home")) {
-    $header
-      .css({
-        background: "linear-gradient(96.8deg, #E18C44 18.05%, #FFCC81 91.37%)",
-        padding: "20px",
-      })
-      .removeClass("header__logo")
-      .addClass(".header__logo_m");
+    console.log("home");
+    $header.css({
+      background: "linear-gradient(96.8deg, #E18C44 18.05%, #FFCC81 91.37%)",
+      padding: "20px",
+    });
+  } else {
+    $header.addClass(".header__logo_m").removeClass("header__logo");
   }
 
   $burger.on("click", function (event) {
@@ -43,6 +42,14 @@ jQuery(document).ready(function ($) {
   }
 
   $(".guests__slider").slick({
+    slidesToShow: 1,
+    arrows: false,
+    cssEase: "linear",
+    autoplay: true,
+    autoplaySpeed: 3000,
+  });
+
+  $(".main-news__slider").slick({
     slidesToShow: 1,
     arrows: false,
     cssEase: "linear",
